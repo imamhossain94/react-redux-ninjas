@@ -14,11 +14,17 @@
 
     <script type="text/babel">
         class App extends React.Component {
+
+            person = {
+                name: "Imam",
+                age: 24
+            }
+
             render() {
                 return(
                     <div>
                         <h1>Hello World!</h1>
-                        <p>{ Math.random() * 10 }</p>
+                        <p>My name is { this.person.name } and I am { this.person.age }</p>
                     </div>
                 )
             }
