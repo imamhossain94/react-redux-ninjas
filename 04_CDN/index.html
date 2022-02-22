@@ -15,31 +15,43 @@
     <script type="text/babel">
         class App extends React.Component {
 
-            person = {
+            state = {
                 name: "Imam",
                 age: 24
             }
 
-            handelClick(e) {
+            handelClick = (e) => {
                 console.log("On click event fired")
             }
 
-            handelHover(e) {
+            handelHover = (e) => {
                 console.log("Hover event fired")
             }
 
-            handelCopy(e) {
+            handelCopy = (e) => {
                 console.log("Chor!! Chor!! Content Chor!")
+            }
+
+            updateState = (e) => {
+
+                this.setState({
+                    name: 'Rafsan',
+                    age: (Math.random() * 100).toFixed(0)
+                })
+                
+                    
+                console.log(this.state)
             }
 
             render() {
                 return(
                     <div>
                         <h1>Hello World!</h1>
-                        <p>My name is { this.person.name } and I am { this.person.age }</p>
+                        <p>My name is { this.state.name } and I am { this.state.age }</p>
                         <button onClick={ this.handelClick }>Click Me</button>
                         <button onMouseOver={ this.handelHover }>Hovar Me</button>
                         <p onCopy={ this.handelCopy }>This is a simple paragraph</p>
+                        <button onClick={ this.updateState }>Update State</button>
                     </div>
                 )
             }
