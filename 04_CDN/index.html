@@ -20,11 +20,26 @@
                 age: 24
             }
 
+            handelClick(e) {
+                console.log("On click event fired")
+            }
+
+            handelHover(e) {
+                console.log("Hover event fired")
+            }
+
+            handelCopy(e) {
+                console.log("Chor!! Chor!! Content Chor!")
+            }
+
             render() {
                 return(
                     <div>
                         <h1>Hello World!</h1>
                         <p>My name is { this.person.name } and I am { this.person.age }</p>
+                        <button onClick={ this.handelClick }>Click Me</button>
+                        <button onMouseOver={ this.handelHover }>Hovar Me</button>
+                        <p onCopy={ this.handelCopy }>This is a simple paragraph</p>
                     </div>
                 )
             }
